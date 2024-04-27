@@ -29,6 +29,7 @@ const Navbar = () => {
       showRegisterModal: false,
     });
   };
+  console.log(currentUser?.imageName)
   const handleSignup = () => {
     dispatch({
       type: reducerCase.TOGGLE_REGISTER,
