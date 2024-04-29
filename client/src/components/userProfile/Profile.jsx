@@ -127,7 +127,7 @@ const Profile = () => {
               <div className="bg-purple-500 size-36 flex items-center justify-center rounded-full relative">
                 {image ? (
                   <Image
-                    src={URL.createObjectURL(image)}
+                    src={currentUser?.imageName}
                     alt="Profile"
                     fill
                     className="rounded-full"

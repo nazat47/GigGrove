@@ -1,17 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    SERVER_URL: "http://localhost:3001",
+    SERVER_URL: "https://giggrove.onrender.com",
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "3001",
-      },
-    ],
+    domains: ["giggrove.onrender.com"],
   },
 };
-
 export default nextConfig;

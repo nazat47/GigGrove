@@ -7,7 +7,7 @@ export default function middleware(req, res) {
     pathname.startsWith("/buyer") ||
     pathname.startsWith("/seller") ||
     pathname.startsWith("/profile");
-  if (protectedPath && (!cookies || cookies !== null)) {
+  if (protectedPath && (!cookies || cookies === null)) {
     return NextResponse.redirect(new URL("/", req.nextUrl));
   }
   return NextResponse.next();

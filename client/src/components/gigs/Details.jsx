@@ -10,6 +10,7 @@ import AddReview from "../../components/gigs/AddReview";
 const Details = ({ gigId }) => {
   const [currentImage, setCurrentImage] = useState("");
   const [{ gigData, hasOrdered }] = stateContextProvider();
+  console.log(`${HOST}/${gigData?.createdBy?.profileImage}`)
   useEffect(() => {
     if (gigData) setCurrentImage(gigData?.images[0]);
   }, [gigData]);

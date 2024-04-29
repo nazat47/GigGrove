@@ -10,7 +10,6 @@ const BuyerOrders = () => {
   const [cookies] = useCookies();
   const [orders, setOrders] = useState([]);
   const [{ currentUser }] = stateContextProvider();
-  console.log(orders.length);
   useEffect(() => {
     const getBuyerOrders = async () => {
       try {
@@ -19,10 +18,11 @@ const BuyerOrders = () => {
             Authorization: `Bearer ${cookies.token}`,
           },
         });
+        console.log(data)
         if (data.orders) {
           setOrders(data.orders);
         }
-        console.log(data.orders);
+
       } catch (error) {
         console.log(error);
       }

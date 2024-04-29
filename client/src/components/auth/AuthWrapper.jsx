@@ -32,10 +32,13 @@ const AuthWrapper = ({ type }) => {
             },
           }
         );
-        setCookies("token", token);
-        dispatch({ type: reducerCase.CLOSE_AUTH_MODAL });
-        if (user) {
-          dispatch({ type: reducerCase.SET_USER, user });
+        if (type === "login") {
+          setCookies("token", token);
+          dispatch({ type: reducerCase.CLOSE_AUTH_MODAL });
+
+          if (user) {
+            dispatch({ type: reducerCase.SET_USER, user });
+          }
         }
         window.location.reload();
       }
